@@ -23,8 +23,10 @@ class Robot
 public:
   Robot();
   void stop();
-  void go(float distance, float v, uint8_t stopWhenDone);
-  void turn(float angle, float w, uint8_t stopWhenDone);
+  void go(float distance);
+  void go(float distance, float v);
+  void turn(float angle);
+  void turn(float angle, float w);
   void drive(float v, float w);
   void beep(int16_t frequency, int16_t duration);
   void setWidth(float width);

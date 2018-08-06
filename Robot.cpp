@@ -59,8 +59,9 @@ void Robot::stop()
 /*
  * Drive with v (m/s) and w(rad/s).
  */
-void Robot::drive(float v, float w)
+void Robot::drive(float v, float w_degs)
 {
+  float w = w_degs * M_PI / 180.0;
   // ToDo: check
   motor[LEFT].setSpeed(v * 2 / motor[LEFT].getDiameter() + w * width / motor[LEFT].getDiameter());
   motor[RIGHT].setSpeed(v * 2 / motor[RIGHT].getDiameter() - w * width / motor[RIGHT].getDiameter());
@@ -69,7 +70,12 @@ void Robot::drive(float v, float w)
 /*
  * Go straight for a defined distance.
  */
-void Robot::go(float distance, float v, uint8_t stopWhenDone)
+void Robot::go(float distance)
+{
+  go(distance, 0.2);
+}
+
+void Robot::go(float distance, float v)
 {
   float current_distance = (motor[LEFT].getDistance() + motor[RIGHT].getDistance()) / 2.0f;
   if (distance >= 0)
@@ -86,17 +92,21 @@ void Robot::go(float distance, float v, uint8_t stopWhenDone)
       drive(-fabs(v), 0.0f);
     }
   }
-  if (stopWhenDone)
-  {
-    stop();
-  }
+  stop();
 }
 
 /*
  * Turn for a defined angle.
  */
-void Robot::turn(float angle, float w, uint8_t stopWhenDone)
+void Robot::turn(float angle_deg)
 {
+  turn(angle_deg, 60.0);
+}
+
+void Robot::turn(float angle_deg, float w_degs)
+{
+  float angle = angle_deg * M_PI / 180.0;
+  float w = w_degs * M_PI / 180.0;
   float current_angle = (motor[LEFT].getDistance() - motor[RIGHT].getDistance()) / width;
   if (angle >= 0)
   {
@@ -112,10 +122,7 @@ void Robot::turn(float angle, float w, uint8_t stopWhenDone)
       drive(0, -fabs(w));
     }
   }
-  if (stopWhenDone)
-  {
-    stop();
-  }
+  stop();
 }
 
 /*

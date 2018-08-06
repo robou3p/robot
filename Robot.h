@@ -44,7 +44,7 @@ public:
 
 private:
   void setupEncoders();
-  float width = 0.084;
+  float width = 0.080;
 };
 
 extern Robot robot;

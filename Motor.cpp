@@ -52,7 +52,7 @@ float Motor::getSpeed()
 void Motor::setSpeed(float w)
 {
   uint32_t now = micros();
-  uint32_t motorDt = now - motorLast;
+  uint32_t motorDt = constrain(now - motorLast, 1, 100000.0);
   motorLast = now;
   float error = w - getSpeed();
   errorIntegral = errorIntegral + error * motorDt / 1000000.0;
@@ -83,6 +83,14 @@ void Motor::setSpeedGains(float kp, float ki, float kd)
 void Motor::setSpeedILimit(float limit)
 {
   errorIntegralLimit = limit;
+}
+
+/*
+ * Resets the integral.
+ */
+void Motor::resetI()
+{
+  errorIntegral = 0.0;
 }
 
 /*

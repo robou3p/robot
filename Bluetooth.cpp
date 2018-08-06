@@ -11,6 +11,8 @@ void Bluetooth::rename(const char *name)
         Serial1.write(name[i]);
     }
     Serial1.write("\n");
+    delay(500);
+    Serial1.write("R,1\n");
 }
 
 void Bluetooth::control()

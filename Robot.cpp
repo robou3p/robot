@@ -77,8 +77,8 @@ void Robot::go(float distance)
 
 void Robot::go(float distance, float v)
 {
-  motor[LEFT].errorIntegral = 0;
-  motor[RIGHT].errorIntegral = 0;
+  motor[LEFT].resetI();
+  motor[RIGHT].resetI();
   float current_distance = (motor[LEFT].getDistance() + motor[RIGHT].getDistance()) / 2.0f;
   if (distance >= 0)
   {
@@ -107,21 +107,21 @@ void Robot::turn(float angle_deg)
 
 void Robot::turn(float angle_deg, float w_degs)
 {
-  motor[LEFT].errorIntegral = 0;
-  motor[RIGHT].errorIntegral = 0;
+  motor[LEFT].resetI();
+  motor[RIGHT].resetI();
   float angle = angle_deg;
   float w = w_degs;
   float current_angle = (motor[LEFT].getDistance() - motor[RIGHT].getDistance()) / width;
   if (angle >= 0)
   {
-    while ((motor[LEFT].getDistance() - motor[RIGHT].getDistance()) / width <= current_angle + angle * M_PI / 180)
+    while ((motor[LEFT].getDistance() - motor[RIGHT].getDistance()) / width <= current_angle + angle * M_PI / 180.0)
     {
       drive(0, fabs(w));
     }
   }
   else
   {
-    while ((motor[LEFT].getDistance() - motor[RIGHT].getDistance()) / width >= current_angle + angle * M_PI / 180)
+    while ((motor[LEFT].getDistance() - motor[RIGHT].getDistance()) / width >= current_angle + angle * M_PI / 180.0)
     {
       drive(0, -fabs(w));
     }

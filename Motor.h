@@ -20,6 +20,7 @@ public:
   void setSpeed(float w);
   void setSpeedGains(float kp, float ki, float kd);
   void setSpeedILimit(float limit);
+  void resetI();
   float getDistance();
   void resetDistance();
   float getDistanceRad();
@@ -28,16 +29,16 @@ public:
   void CAPT_ISR(uint8_t motor);
   void OVF_ISR();
 
-  //private:
+private:
   uint8_t motor = 0;
   float voltage = 0.0;
   volatile float speed = 0.0;
-  float distance = 0.0;
-  float diameter = 0.028;
+  float distance = 1.0;
+  float diameter = 0.030;
   float kp = 0.15;
   float ki = 0.6;
   float kd = 0.0;
-  volatile uint32_t encoderDt = 10000;
+  volatile uint32_t encoderDt = 1000000000;
   volatile int8_t encoderDirection = 1;
   volatile int32_t encoderTicks = 0;
   volatile uint32_t encoderLast[4] = {0, 0, 0, 0};

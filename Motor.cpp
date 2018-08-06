@@ -56,12 +56,14 @@ void Motor::setSpeed(float w)
   motorLast = now;
   float error = w - getSpeed();
   errorIntegral = errorIntegral + error * motorDt / 1000000.0;
-  if (errorIntegral > errorIntegralLimit)
-    errorIntegral = errorIntegralLimit;
-  else if (errorIntegral < -errorIntegralLimit)
-    errorIntegral = -errorIntegralLimit;
-  int16_t errorDifferential = (error - errorPrevious) * 1000000.0 / motorDt;
-  setVoltage(kp * error + ki * errorIntegral + kd * errorDifferential);
+  errorIntegral = constrain(errorIntegral, -errorIntegralLimit, errorIntegralLimit);
+  float errorDifferential = (error - errorPrevious) * 1000000.0 / motorDt;
+  errorDifferential = constrain(errorDifferential, -errorIntegralLimit, errorIntegralLimit);
+  float newVoltage = kp * error + ki * errorIntegral + kd * errorDifferential;
+  float acceleration = 10.0; // V/s
+  newVoltage = constrain(newVoltage, getVoltage() - acceleration * motorDt / 1000000.0,
+                         getVoltage() + acceleration * motorDt / 1000000.0);
+  setVoltage(newVoltage);
   errorPrevious = error;
 }
 

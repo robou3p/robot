@@ -1,16 +1,16 @@
 #include "Bluetooth.h"
 #include "Robot.h"
 
-void Bluetooth::rename()
+void Bluetooth::rename(const char *name)
 {
-    if (Serial.available())
+    Serial1.write("$$$");
+    delay(500);
+    Serial1.write("SN,");
+    for (int i = 0; i < strlen(name); i++)
     {
-        Serial1.write(Serial.read());
+        Serial1.write(name[i]);
     }
-    if (Serial1.available())
-    {
-        Serial.write(Serial1.read());
-    }
+    Serial1.write("\n");
 }
 
 void Bluetooth::control()
@@ -31,11 +31,11 @@ void Bluetooth::control()
             int speedLeft = Serial1.read();
             if (dirLeft == 1)
             {
-                robot.motor[LEFT].setVoltage(speedLeft / 51.0);
+                robot.motor[LEFT].setVoltage(speedLeft / 50.0);
             }
             else
             {
-                robot.motor[LEFT].setVoltage(-speedLeft / 51.0);
+                robot.motor[LEFT].setVoltage(-speedLeft / 50.0);
             }
             break;
         }
@@ -51,11 +51,11 @@ void Bluetooth::control()
             int speedRight = Serial1.read();
             if (dirRight == 1)
             {
-                robot.motor[RIGHT].setVoltage(speedRight / 51.0);
+                robot.motor[RIGHT].setVoltage(speedRight / 50.0);
             }
             else
             {
-                robot.motor[RIGHT].setVoltage(-speedRight / 51.0);
+                robot.motor[RIGHT].setVoltage(-speedRight / 50.0);
             }
             break;
         }

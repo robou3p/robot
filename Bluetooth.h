@@ -6,7 +6,7 @@
 class Bluetooth
 {
 public:
-  void rename();
+  void rename(const char* name);
   void control();
 
 private:

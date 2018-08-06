@@ -21,7 +21,7 @@ float Motor::getVoltage()
  */
 void Motor::setVoltage(float u)
 {
-  voltage = constrain(u, -8.85, 8.85);
+  voltage = constrain(u, -5.0, 5.0);
   int16_t pwm = (int16_t)(voltage * 255.0 / 8.85);
   pwm = constrain(pwm, -255, 255);
   if (motor == RIGHT)

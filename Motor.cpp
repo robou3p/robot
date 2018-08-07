@@ -60,7 +60,7 @@ void Motor::setSpeed(float w)
   float errorDifferential = (error - errorPrevious) * 1000000.0 / motorDt;
   errorDifferential = constrain(errorDifferential, -errorIntegralLimit, errorIntegralLimit);
   float newVoltage = kp * error + ki * errorIntegral + kd * errorDifferential;
-  float acceleration = 10.0; // V/s
+  float acceleration = 50.0; // V/s
   newVoltage = constrain(newVoltage, getVoltage() - acceleration * motorDt / 1000000.0,
                          getVoltage() + acceleration * motorDt / 1000000.0);
   setVoltage(newVoltage);

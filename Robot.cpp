@@ -77,8 +77,6 @@ void Robot::go(float distance)
 
 void Robot::go(float distance, float v)
 {
-  motor[LEFT].resetI();
-  motor[RIGHT].resetI();
   float current_distance = (motor[LEFT].getDistance() + motor[RIGHT].getDistance()) / 2.0f;
   if (distance >= 0)
   {
@@ -107,8 +105,6 @@ void Robot::turn(float angle_deg)
 
 void Robot::turn(float angle_deg, float w_degs)
 {
-  motor[LEFT].resetI();
-  motor[RIGHT].resetI();
   float angle = angle_deg;
   float w = w_degs;
   float current_angle = (motor[LEFT].getDistance() - motor[RIGHT].getDistance()) / width;

@@ -36,7 +36,7 @@ private:
   float distance = 1.0;
   float diameter = 0.030;
   float kp = 0.15;
-  float ki = 0.6;
+  float ki = 0.80;
   float kd = 0.0;
   volatile uint32_t encoderDt = 1000000000;
   volatile int8_t encoderDirection = 1;
@@ -45,7 +45,7 @@ private:
   volatile uint32_t encoderOverflows = 0;
   volatile uint32_t motorLast = 0;
   float errorIntegral = 0.0;
-  float errorIntegralLimit = 2.0;
+  float errorIntegralLimit = 3.0;
   float errorPrevious = 0.0;
 };
 

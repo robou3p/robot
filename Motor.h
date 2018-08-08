@@ -32,12 +32,12 @@ public:
 private:
   uint8_t motor = 0;
   float voltage = 0.0;
-  volatile float speed = 0.0;
+  volatile uint8_t still = 0;
   float distance = 1.0;
   float diameter = 0.030;
   float kp = 0.15;
-  float ki = 0.80;
-  float kd = 0.0;
+  float ki = 0.70;
+  float kd = 0.00;
   volatile uint32_t encoderDt = 1000000000;
   volatile int8_t encoderDirection = 1;
   volatile int32_t encoderTicks = 0;
@@ -45,7 +45,7 @@ private:
   volatile uint32_t encoderOverflows = 0;
   volatile uint32_t motorLast = 0;
   float errorIntegral = 0.0;
-  float errorIntegralLimit = 3.0;
+  float errorIntegralLimit = 2.0;
   float errorPrevious = 0.0;
 };
 

@@ -43,6 +43,10 @@ void Motor::setVoltage(float u)
  */
 float Motor::getSpeed()
 {
+  if (still)
+  {
+    return 0;
+  }
   return encoderDirection * 8000000.0 * M_PI / 6.0 / 29.86 / (float)encoderDt;
 }
 
@@ -59,7 +63,7 @@ void Motor::setSpeed(float w)
   errorIntegral = constrain(errorIntegral, -errorIntegralLimit, errorIntegralLimit);
   float errorDifferential = (error - errorPrevious) * 1000000.0 / motorDt;
   errorDifferential = constrain(errorDifferential, -errorIntegralLimit, errorIntegralLimit);
-  float newVoltage = kp * error + ki * errorIntegral + kd * errorDifferential;
+  float newVoltage = w * 0.05 + kp * error + ki * errorIntegral + kd * errorDifferential;
   float acceleration = 50.0; // V/s
   newVoltage = constrain(newVoltage, getVoltage() - acceleration * motorDt / 1000000.0,
                          getVoltage() + acceleration * motorDt / 1000000.0);
@@ -138,6 +142,7 @@ void Motor::setDiameter(float diameter)
  */
 void Motor::CAPT_ISR(uint8_t motor)
 {
+  still = 0;
   uint32_t now = micros();
   encoderDt = now - encoderLast[3];
   encoderLast[3] = encoderLast[2];
@@ -167,6 +172,6 @@ void Motor::OVF_ISR()
 {
   if (++encoderOverflows > 64)
   {
-    speed = 0.0;
+    still = 1;
   }
 }

@@ -176,7 +176,7 @@ float IMU::getMZ()
   return mpu._hz;
 }
 
-void IMU::calibrateMag()
+void IMU::calibrate()
 {
   if (lastUpdate == 0)
   {

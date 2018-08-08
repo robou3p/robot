@@ -161,12 +161,12 @@ int MPU9250::begin()
   }
 
   // read mag biases and scale from EEPROM
-  EEPROM.get(28 * sizeof(int16_t) + 0 * sizeof(float), _hxb);
-  EEPROM.get(28 * sizeof(int16_t) + 1 * sizeof(float), _hyb);
-  EEPROM.get(28 * sizeof(int16_t) + 2 * sizeof(float), _hzb);
-  EEPROM.get(28 * sizeof(int16_t) + 3 * sizeof(float), _hxs);
-  EEPROM.get(28 * sizeof(int16_t) + 4 * sizeof(float), _hys);
-  EEPROM.get(28 * sizeof(int16_t) + 5 * sizeof(float), _hzs);
+  EEPROM.get(16 * sizeof(int16_t) + 12 * sizeof(float) + 0 * sizeof(float), _hxb);
+  EEPROM.get(16 * sizeof(int16_t) + 12 * sizeof(float) + 1 * sizeof(float), _hyb);
+  EEPROM.get(16 * sizeof(int16_t) + 12 * sizeof(float) + 2 * sizeof(float), _hzb);
+  EEPROM.get(16 * sizeof(int16_t) + 12 * sizeof(float) + 3 * sizeof(float), _hxs);
+  EEPROM.get(16 * sizeof(int16_t) + 12 * sizeof(float) + 4 * sizeof(float), _hys);
+  EEPROM.get(16 * sizeof(int16_t) + 12 * sizeof(float) + 5 * sizeof(float), _hzs);
 
   // successful init, return 1
   return 1;
@@ -841,12 +841,12 @@ int MPU9250::calibrateMag()
   _hzs = _avgs / _hzs;
 
   // write the values to EEPROM
-  EEPROM.put(28 * sizeof(int16_t) + 0 * sizeof(float), _hxb);
-  EEPROM.put(28 * sizeof(int16_t) + 1 * sizeof(float), _hyb);
-  EEPROM.put(28 * sizeof(int16_t) + 2 * sizeof(float), _hzb);
-  EEPROM.put(28 * sizeof(int16_t) + 3 * sizeof(float), _hxs);
-  EEPROM.put(28 * sizeof(int16_t) + 4 * sizeof(float), _hys);
-  EEPROM.put(28 * sizeof(int16_t) + 5 * sizeof(float), _hzs);
+  EEPROM.put(16 * sizeof(int16_t) + 12 * sizeof(float) + 0 * sizeof(float), _hxb);
+  EEPROM.put(16 * sizeof(int16_t) + 12 * sizeof(float) + 1 * sizeof(float), _hyb);
+  EEPROM.put(16 * sizeof(int16_t) + 12 * sizeof(float) + 2 * sizeof(float), _hzb);
+  EEPROM.put(16 * sizeof(int16_t) + 12 * sizeof(float) + 3 * sizeof(float), _hxs);
+  EEPROM.put(16 * sizeof(int16_t) + 12 * sizeof(float) + 4 * sizeof(float), _hys);
+  EEPROM.put(16 * sizeof(int16_t) + 12 * sizeof(float) + 5 * sizeof(float), _hzs);
 
   // set the srd back to what it was
   if (setSrd(_srd) < 0)

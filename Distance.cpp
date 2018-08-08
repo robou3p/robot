@@ -6,10 +6,11 @@
 Distance::Distance()
 {
   // loads default calibration values
+
   for (uint16_t i = 0; i < 6; i++)
   {
-    EEPROM.get((i + 16) * sizeof(int16_t), a[i]);
-    EEPROM.get((i + 22) * sizeof(int16_t), b[i]);
+    EEPROM.get(16 * sizeof(int16_t) + (i) * sizeof(float), a[i]);
+    EEPROM.get(16 * sizeof(int16_t) + (i + 6) * sizeof(float), b[i]);
   }
 }
 
@@ -35,8 +36,8 @@ void Distance::calibrate(int16_t duration)
   {
     a[i] = 0.5 * log((float)sensorsMax[i]) * log((float)sensorsMin[i]) / (log((float)sensorsMax[i]) - log((float)sensorsMin[i]));
     b[i] = 0.5 * log((float)sensorsMin[i]) / (log((float)sensorsMax[i]) - log((float)sensorsMin[i]));
-    EEPROM.put((i + 16) * sizeof(int16_t), a[i]);
-    EEPROM.put((i + 22) * sizeof(int16_t), b[i]);
+    EEPROM.put(16 * sizeof(int16_t) + (i) * sizeof(float), a[i]);
+    EEPROM.put(16 * sizeof(int16_t) + (i + 6) * sizeof(float), b[i]);
   }
 }
 

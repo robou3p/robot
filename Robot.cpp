@@ -62,7 +62,6 @@ void Robot::stop()
 void Robot::drive(float v, float w_degs)
 {
   float w = w_degs * M_PI / 180.0;
-  // ToDo: check
   motor[LEFT].setSpeed(v * 2 / motor[LEFT].getDiameter() + w * width / motor[LEFT].getDiameter());
   motor[RIGHT].setSpeed(v * 2 / motor[RIGHT].getDiameter() - w * width / motor[RIGHT].getDiameter());
 }
@@ -72,7 +71,7 @@ void Robot::drive(float v, float w_degs)
  */
 void Robot::go(float distance)
 {
-  go(distance, 0.2);
+  go(distance, 0.3f);
 }
 
 void Robot::go(float distance, float v)
@@ -100,7 +99,7 @@ void Robot::go(float distance, float v)
  */
 void Robot::turn(float angle_deg)
 {
-  turn(angle_deg, 60.0);
+  turn(angle_deg, 180.0f);
 }
 
 void Robot::turn(float angle_deg, float w_degs)
@@ -159,11 +158,11 @@ float Robot::getSpeed()
 }
 
 /*
- * Returns the current robot angular velocity in rad/s.
+ * Returns the current robot angular velocity in deg/s.
  */
 float Robot::getAngularVelocity()
 {
-  return (M_PI * motor[LEFT].getDiameter() * motor[LEFT].getSpeed() - M_PI * motor[RIGHT].getDiameter() * motor[RIGHT].getSpeed()) / width;
+  return (180.0f * motor[LEFT].getDiameter() * motor[LEFT].getSpeed() - 180.0f * motor[RIGHT].getDiameter() * motor[RIGHT].getSpeed()) / width;
 }
 
 /*

@@ -20,8 +20,7 @@ public:
   float getMX();
   float getMY();
   float getMZ();
-
-  void calibrateMag();
+  void calibrate();
 
   Filters filters = Filters();
   MPU9250 mpu = MPU9250(Wire, 0x68);

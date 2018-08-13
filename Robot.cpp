@@ -71,7 +71,7 @@ void Robot::drive(float v, float w_degs)
  */
 void Robot::go(float distance)
 {
-  go(distance, 0.3f);
+  go(distance, 0.2f);
 }
 
 void Robot::go(float distance, float v)
@@ -162,7 +162,7 @@ float Robot::getSpeed()
  */
 float Robot::getAngularVelocity()
 {
-  return (180.0f * motor[LEFT].getDiameter() * motor[LEFT].getSpeed() - 180.0f * motor[RIGHT].getDiameter() * motor[RIGHT].getSpeed()) / width;
+  return (180.0 / 4.0 * motor[LEFT].getDiameter() * motor[LEFT].getSpeed() - 180.0 / 4.0 * motor[RIGHT].getDiameter() * motor[RIGHT].getSpeed()) / width;
 }
 
 /*

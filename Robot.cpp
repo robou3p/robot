@@ -62,8 +62,8 @@ void Robot::stop()
 void Robot::drive(float v, float w_degs)
 {
   float w = w_degs * M_PI / 180.0;
-  motor[LEFT].setSpeed(v * 2 / motor[LEFT].getDiameter() + w * width / motor[LEFT].getDiameter());
-  motor[RIGHT].setSpeed(v * 2 / motor[RIGHT].getDiameter() - w * width / motor[RIGHT].getDiameter());
+  motor[LEFT].setSpeed(v * 2.0 / motor[LEFT].getDiameter() + w * width / motor[LEFT].getDiameter());
+  motor[RIGHT].setSpeed(v * 2.0 / motor[RIGHT].getDiameter() - w * width / motor[RIGHT].getDiameter());
 }
 
 /*
@@ -154,7 +154,7 @@ void Robot::setWidth(float width)
  */
 float Robot::getSpeed()
 {
-  return (M_PI * motor[LEFT].getDiameter() * motor[LEFT].getSpeed() + M_PI * motor[RIGHT].getDiameter() * motor[RIGHT].getSpeed()) / 2.0;
+  return (motor[LEFT].getDiameter() * motor[LEFT].getSpeed() + motor[RIGHT].getDiameter() * motor[RIGHT].getSpeed()) / 4.0;
 }
 
 /*
@@ -162,7 +162,7 @@ float Robot::getSpeed()
  */
 float Robot::getAngularVelocity()
 {
-  return (180.0 / 4.0 * motor[LEFT].getDiameter() * motor[LEFT].getSpeed() - 180.0 / 4.0 * motor[RIGHT].getDiameter() * motor[RIGHT].getSpeed()) / width;
+  return (180.0 / 2.0 / M_PI * motor[LEFT].getDiameter() * motor[LEFT].getSpeed() - 180.0 / 2.0 / M_PI * motor[RIGHT].getDiameter() * motor[RIGHT].getSpeed()) / width;
 }
 
 /*

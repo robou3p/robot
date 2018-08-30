@@ -1,14 +1,17 @@
 #include "Battery.h"
 
-/*
- * Constructor
+/**
+ * @brief Construct a new Battery:: Battery object
+ * 
  */
 Battery::Battery()
 {
 }
 
-/*
- * Returns the battery voltage
+/**
+ * @brief Returns the current battery voltage.
+ * 
+ * @return float Battery voltage.
  */
 float Battery::getVoltage()
 {

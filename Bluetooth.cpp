@@ -1,6 +1,11 @@
 #include "Bluetooth.h"
 #include "Robot.h"
 
+/**
+ * @brief Renames the Bluetooth module by sending a sequence of AT commands to the RN42 module. The module stays renames after reset.
+ * 
+ * @param name Name of the Bluetooth module.
+ */
 void Bluetooth::rename(const char *name)
 {
     Serial1.write("$$$");
@@ -15,6 +20,10 @@ void Bluetooth::rename(const char *name)
     Serial1.write("R,1\n");
 }
 
+/**
+ * @brief Enables control of the robot using the corresponding mobile phone application. This function is to be repeatedly called within loop().
+ * 
+ */
 void Bluetooth::control()
 {
     if (Serial1.available())

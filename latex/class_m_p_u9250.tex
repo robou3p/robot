@@ -1,0 +1,222 @@
+\hypertarget{class_m_p_u9250}{}\section{M\+P\+U9250 Class Reference}
+\label{class_m_p_u9250}\index{M\+P\+U9250@{M\+P\+U9250}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_afef8319c985d9930cd31797263b37585}\label{class_m_p_u9250_afef8319c985d9930cd31797263b37585}} 
+enum {\bfseries Gyro\+Range} \{ {\bfseries G\+Y\+R\+O\+\_\+\+R\+A\+N\+G\+E\+\_\+250\+D\+PS}, 
+{\bfseries G\+Y\+R\+O\+\_\+\+R\+A\+N\+G\+E\+\_\+500\+D\+PS}, 
+{\bfseries G\+Y\+R\+O\+\_\+\+R\+A\+N\+G\+E\+\_\+1000\+D\+PS}, 
+{\bfseries G\+Y\+R\+O\+\_\+\+R\+A\+N\+G\+E\+\_\+2000\+D\+PS}
+ \}
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a1d1d4f36ec5a9cd9cea9e196b02cb0f1}\label{class_m_p_u9250_a1d1d4f36ec5a9cd9cea9e196b02cb0f1}} 
+enum {\bfseries Accel\+Range} \{ {\bfseries A\+C\+C\+E\+L\+\_\+\+R\+A\+N\+G\+E\+\_\+2G}, 
+{\bfseries A\+C\+C\+E\+L\+\_\+\+R\+A\+N\+G\+E\+\_\+4G}, 
+{\bfseries A\+C\+C\+E\+L\+\_\+\+R\+A\+N\+G\+E\+\_\+8G}, 
+{\bfseries A\+C\+C\+E\+L\+\_\+\+R\+A\+N\+G\+E\+\_\+16G}
+ \}
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a7eb38e4553c5cb064169037c6172baa8}\label{class_m_p_u9250_a7eb38e4553c5cb064169037c6172baa8}} 
+enum {\bfseries Dlpf\+Bandwidth} \{ \newline
+{\bfseries D\+L\+P\+F\+\_\+\+B\+A\+N\+D\+W\+I\+D\+T\+H\+\_\+184\+HZ}, 
+{\bfseries D\+L\+P\+F\+\_\+\+B\+A\+N\+D\+W\+I\+D\+T\+H\+\_\+92\+HZ}, 
+{\bfseries D\+L\+P\+F\+\_\+\+B\+A\+N\+D\+W\+I\+D\+T\+H\+\_\+41\+HZ}, 
+{\bfseries D\+L\+P\+F\+\_\+\+B\+A\+N\+D\+W\+I\+D\+T\+H\+\_\+20\+HZ}, 
+\newline
+{\bfseries D\+L\+P\+F\+\_\+\+B\+A\+N\+D\+W\+I\+D\+T\+H\+\_\+10\+HZ}, 
+{\bfseries D\+L\+P\+F\+\_\+\+B\+A\+N\+D\+W\+I\+D\+T\+H\+\_\+5\+HZ}
+ \}
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a497013a9b2a7273571fb83c9c2b2266f}\label{class_m_p_u9250_a497013a9b2a7273571fb83c9c2b2266f}} 
+enum {\bfseries Lp\+Accel\+Odr} \{ \newline
+{\bfseries L\+P\+\_\+\+A\+C\+C\+E\+L\+\_\+\+O\+D\+R\+\_\+0\+\_\+24\+HZ} = 0, 
+{\bfseries L\+P\+\_\+\+A\+C\+C\+E\+L\+\_\+\+O\+D\+R\+\_\+0\+\_\+49\+HZ} = 1, 
+{\bfseries L\+P\+\_\+\+A\+C\+C\+E\+L\+\_\+\+O\+D\+R\+\_\+0\+\_\+98\+HZ} = 2, 
+{\bfseries L\+P\+\_\+\+A\+C\+C\+E\+L\+\_\+\+O\+D\+R\+\_\+1\+\_\+95\+HZ} = 3, 
+\newline
+{\bfseries L\+P\+\_\+\+A\+C\+C\+E\+L\+\_\+\+O\+D\+R\+\_\+3\+\_\+91\+HZ} = 4, 
+{\bfseries L\+P\+\_\+\+A\+C\+C\+E\+L\+\_\+\+O\+D\+R\+\_\+7\+\_\+81\+HZ} = 5, 
+{\bfseries L\+P\+\_\+\+A\+C\+C\+E\+L\+\_\+\+O\+D\+R\+\_\+15\+\_\+63\+HZ} = 6, 
+{\bfseries L\+P\+\_\+\+A\+C\+C\+E\+L\+\_\+\+O\+D\+R\+\_\+31\+\_\+25\+HZ} = 7, 
+\newline
+{\bfseries L\+P\+\_\+\+A\+C\+C\+E\+L\+\_\+\+O\+D\+R\+\_\+62\+\_\+50\+HZ} = 8, 
+{\bfseries L\+P\+\_\+\+A\+C\+C\+E\+L\+\_\+\+O\+D\+R\+\_\+125\+HZ} = 9, 
+{\bfseries L\+P\+\_\+\+A\+C\+C\+E\+L\+\_\+\+O\+D\+R\+\_\+250\+HZ} = 10, 
+{\bfseries L\+P\+\_\+\+A\+C\+C\+E\+L\+\_\+\+O\+D\+R\+\_\+500\+HZ} = 11
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_acaf2ae31cfdeb6d47b922996feb55b69}\label{class_m_p_u9250_acaf2ae31cfdeb6d47b922996feb55b69}} 
+{\bfseries M\+P\+U9250} (Two\+Wire \&bus, uint8\+\_\+t address)
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_ab0e26058e7148ebf5af4569138337a02}\label{class_m_p_u9250_ab0e26058e7148ebf5af4569138337a02}} 
+int {\bfseries begin} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a469a02366142d54fb58e39880ea7fa01}\label{class_m_p_u9250_a469a02366142d54fb58e39880ea7fa01}} 
+int {\bfseries set\+Accel\+Range} (Accel\+Range range)
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a472679872163e0c4994ae125982d5fd2}\label{class_m_p_u9250_a472679872163e0c4994ae125982d5fd2}} 
+int {\bfseries set\+Gyro\+Range} (Gyro\+Range range)
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a0b3804d17270a7bfe40f2e31e2e4bdc8}\label{class_m_p_u9250_a0b3804d17270a7bfe40f2e31e2e4bdc8}} 
+int {\bfseries set\+Dlpf\+Bandwidth} (Dlpf\+Bandwidth bandwidth)
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a969857ba25ba11cc34eb900ca6428817}\label{class_m_p_u9250_a969857ba25ba11cc34eb900ca6428817}} 
+int {\bfseries set\+Srd} (uint8\+\_\+t srd)
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_aff5c0acd0797c79230d78c5e6c8a6321}\label{class_m_p_u9250_aff5c0acd0797c79230d78c5e6c8a6321}} 
+int {\bfseries read\+Sensor} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_ab9daf3fb8328d3fb3ae77a0fa0957a7e}\label{class_m_p_u9250_ab9daf3fb8328d3fb3ae77a0fa0957a7e}} 
+float {\bfseries get\+Accel\+X\+\_\+mss} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_ad3cbdd7b229e429b77c06cfabee778a1}\label{class_m_p_u9250_ad3cbdd7b229e429b77c06cfabee778a1}} 
+float {\bfseries get\+Accel\+Y\+\_\+mss} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a58a1600a522933cd5cbd9a8f5ffc4536}\label{class_m_p_u9250_a58a1600a522933cd5cbd9a8f5ffc4536}} 
+float {\bfseries get\+Accel\+Z\+\_\+mss} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a2ec6d66f8a1d381e5a6b558756e3275d}\label{class_m_p_u9250_a2ec6d66f8a1d381e5a6b558756e3275d}} 
+float {\bfseries get\+Gyro\+X\+\_\+rads} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a187251337b4cfb80683cfaaa65ab9e58}\label{class_m_p_u9250_a187251337b4cfb80683cfaaa65ab9e58}} 
+float {\bfseries get\+Gyro\+Y\+\_\+rads} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a07f8ccd1907f134d866105e3d5ec5a10}\label{class_m_p_u9250_a07f8ccd1907f134d866105e3d5ec5a10}} 
+float {\bfseries get\+Gyro\+Z\+\_\+rads} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a65c4f2aace22a783462b0ee9ef5cdd7b}\label{class_m_p_u9250_a65c4f2aace22a783462b0ee9ef5cdd7b}} 
+float {\bfseries get\+Mag\+X\+\_\+uT} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_ac909d3078a23d24d44fb8852f9371c40}\label{class_m_p_u9250_ac909d3078a23d24d44fb8852f9371c40}} 
+float {\bfseries get\+Mag\+Y\+\_\+uT} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a95b19aa80f3ce812d6ccb87b57475389}\label{class_m_p_u9250_a95b19aa80f3ce812d6ccb87b57475389}} 
+float {\bfseries get\+Mag\+Z\+\_\+uT} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a3b6cad3768c6153c56fcac4edd3fe792}\label{class_m_p_u9250_a3b6cad3768c6153c56fcac4edd3fe792}} 
+float {\bfseries get\+Temperature\+\_\+C} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a88596ddf9d0f52ca7b9181706d17217f}\label{class_m_p_u9250_a88596ddf9d0f52ca7b9181706d17217f}} 
+int {\bfseries calibrate\+Gyro} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a551689391a2bfa5aa4af6f10b586ee76}\label{class_m_p_u9250_a551689391a2bfa5aa4af6f10b586ee76}} 
+float {\bfseries get\+Gyro\+Bias\+X\+\_\+rads} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a42bd5c0267c0fa180dbc5c332db1ec66}\label{class_m_p_u9250_a42bd5c0267c0fa180dbc5c332db1ec66}} 
+float {\bfseries get\+Gyro\+Bias\+Y\+\_\+rads} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_aa48133a853a679469bfc91235c4a52cf}\label{class_m_p_u9250_aa48133a853a679469bfc91235c4a52cf}} 
+float {\bfseries get\+Gyro\+Bias\+Z\+\_\+rads} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_add18eb9ed44f047f11d75b2f1e44af4b}\label{class_m_p_u9250_add18eb9ed44f047f11d75b2f1e44af4b}} 
+void {\bfseries set\+Gyro\+Bias\+X\+\_\+rads} (float bias)
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_aa4adc28e4c00afdd04d9a0c754ef5cfd}\label{class_m_p_u9250_aa4adc28e4c00afdd04d9a0c754ef5cfd}} 
+void {\bfseries set\+Gyro\+Bias\+Y\+\_\+rads} (float bias)
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a66bf9a29debfc2de700f77373544c1a7}\label{class_m_p_u9250_a66bf9a29debfc2de700f77373544c1a7}} 
+void {\bfseries set\+Gyro\+Bias\+Z\+\_\+rads} (float bias)
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_ad5f4d08b299f35374d1bca9d7122fcdc}\label{class_m_p_u9250_ad5f4d08b299f35374d1bca9d7122fcdc}} 
+int {\bfseries calibrate\+Accel} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_ab1216d85d53de15fb1f8ddc1e4424318}\label{class_m_p_u9250_ab1216d85d53de15fb1f8ddc1e4424318}} 
+float {\bfseries get\+Accel\+Bias\+X\+\_\+mss} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a2664ab962bccde644ef528349e1660d6}\label{class_m_p_u9250_a2664ab962bccde644ef528349e1660d6}} 
+float {\bfseries get\+Accel\+Scale\+FactorX} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_af02b9af589591792b6fe7328582e32ef}\label{class_m_p_u9250_af02b9af589591792b6fe7328582e32ef}} 
+float {\bfseries get\+Accel\+Bias\+Y\+\_\+mss} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_ad9b6213723700af8daba00f31840fe16}\label{class_m_p_u9250_ad9b6213723700af8daba00f31840fe16}} 
+float {\bfseries get\+Accel\+Scale\+FactorY} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_ab3421dae6ebe1190407be7a832b6313c}\label{class_m_p_u9250_ab3421dae6ebe1190407be7a832b6313c}} 
+float {\bfseries get\+Accel\+Bias\+Z\+\_\+mss} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a046579c4492296dce3d3a0cf2e409e96}\label{class_m_p_u9250_a046579c4492296dce3d3a0cf2e409e96}} 
+float {\bfseries get\+Accel\+Scale\+FactorZ} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_acfc8adb5dcfe24eb35f2a82377c0d8a0}\label{class_m_p_u9250_acfc8adb5dcfe24eb35f2a82377c0d8a0}} 
+void {\bfseries set\+Accel\+CalX} (float bias, float scale\+Factor)
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_aa56ca1f8a383ba760188f204a9ef6548}\label{class_m_p_u9250_aa56ca1f8a383ba760188f204a9ef6548}} 
+void {\bfseries set\+Accel\+CalY} (float bias, float scale\+Factor)
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a9ab03b06b0d01aa4f8588cd9fd6588c6}\label{class_m_p_u9250_a9ab03b06b0d01aa4f8588cd9fd6588c6}} 
+void {\bfseries set\+Accel\+CalZ} (float bias, float scale\+Factor)
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_aba735458296fb277a05efcb1a3ceb761}\label{class_m_p_u9250_aba735458296fb277a05efcb1a3ceb761}} 
+int {\bfseries calibrate\+Mag} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a9bb3dfd24f86ce01d45cc34759eff5f5}\label{class_m_p_u9250_a9bb3dfd24f86ce01d45cc34759eff5f5}} 
+float {\bfseries get\+Mag\+Bias\+X\+\_\+uT} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a9ae0353e7326ba32a11422b3bc7b5cee}\label{class_m_p_u9250_a9ae0353e7326ba32a11422b3bc7b5cee}} 
+float {\bfseries get\+Mag\+Scale\+FactorX} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a7f9328b066c9c07887c5c79fff33554c}\label{class_m_p_u9250_a7f9328b066c9c07887c5c79fff33554c}} 
+float {\bfseries get\+Mag\+Bias\+Y\+\_\+uT} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a5457ecd92f0c920312af61df0c1bb1b3}\label{class_m_p_u9250_a5457ecd92f0c920312af61df0c1bb1b3}} 
+float {\bfseries get\+Mag\+Scale\+FactorY} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a23d0c81842120b27af379961b773465f}\label{class_m_p_u9250_a23d0c81842120b27af379961b773465f}} 
+float {\bfseries get\+Mag\+Bias\+Z\+\_\+uT} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a859590996f4e1673d0f21eabe5e1a2f4}\label{class_m_p_u9250_a859590996f4e1673d0f21eabe5e1a2f4}} 
+float {\bfseries get\+Mag\+Scale\+FactorZ} ()
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a063be654730f719544be8a7ce39a433c}\label{class_m_p_u9250_a063be654730f719544be8a7ce39a433c}} 
+void {\bfseries set\+Mag\+CalX} (float bias, float scale\+Factor)
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_af85a3badd3f79969c4715fceec962e39}\label{class_m_p_u9250_af85a3badd3f79969c4715fceec962e39}} 
+void {\bfseries set\+Mag\+CalY} (float bias, float scale\+Factor)
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a36fab1c8d06aa5dcd0e6a4014d7ca5e7}\label{class_m_p_u9250_a36fab1c8d06aa5dcd0e6a4014d7ca5e7}} 
+void {\bfseries set\+Mag\+CalZ} (float bias, float scale\+Factor)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a7f80ffcecb0dd28d2353b46f429d2a5f}\label{class_m_p_u9250_a7f80ffcecb0dd28d2353b46f429d2a5f}} 
+float {\bfseries \+\_\+ax}
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a32369a95df72383edd03fff2c7439233}\label{class_m_p_u9250_a32369a95df72383edd03fff2c7439233}} 
+float {\bfseries \+\_\+ay}
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_aac7e2beff39549eaa82c7d677b8cc42e}\label{class_m_p_u9250_aac7e2beff39549eaa82c7d677b8cc42e}} 
+float {\bfseries \+\_\+az}
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a9af2d19af34ffdeb2d09f61f43ab62a8}\label{class_m_p_u9250_a9af2d19af34ffdeb2d09f61f43ab62a8}} 
+float {\bfseries \+\_\+gx}
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a3e4d7f5b0f10fecaf6e4cad3235d6e29}\label{class_m_p_u9250_a3e4d7f5b0f10fecaf6e4cad3235d6e29}} 
+float {\bfseries \+\_\+gy}
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_af68ffa42e0bf808af73b11a9694d4f86}\label{class_m_p_u9250_af68ffa42e0bf808af73b11a9694d4f86}} 
+float {\bfseries \+\_\+gz}
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a0f8f1f024f8d3b0461385b53022472ac}\label{class_m_p_u9250_a0f8f1f024f8d3b0461385b53022472ac}} 
+float {\bfseries \+\_\+hx}
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a25695de739e4ca8432995c81592a5ed1}\label{class_m_p_u9250_a25695de739e4ca8432995c81592a5ed1}} 
+float {\bfseries \+\_\+hy}
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a28763d4c62447190bdb038623c2fc8c6}\label{class_m_p_u9250_a28763d4c62447190bdb038623c2fc8c6}} 
+float {\bfseries \+\_\+hz}
+\item 
+\mbox{\Hypertarget{class_m_p_u9250_a614da2a23f959ed1c3e68bae5389983d}\label{class_m_p_u9250_a614da2a23f959ed1c3e68bae5389983d}} 
+float {\bfseries \+\_\+t}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+M\+P\+U9250.\+h\item 
+M\+P\+U9250.\+cpp\end{DoxyCompactItemize}

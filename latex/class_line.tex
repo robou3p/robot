@@ -1,0 +1,71 @@
+\hypertarget{class_line}{}\section{Line Class Reference}
+\label{class_line}\index{Line@{Line}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_line_a881d9279bdc8f59b5080f73ad00788e3}\label{class_line_a881d9279bdc8f59b5080f73ad00788e3}} 
+void {\bfseries calibrate} (int16\+\_\+t duration)
+\item 
+\mbox{\Hypertarget{class_line_aa0526da82dd7543ac75fc07ee3dbb31c}\label{class_line_aa0526da82dd7543ac75fc07ee3dbb31c}} 
+float {\bfseries get\+Position} ()
+\item 
+\mbox{\Hypertarget{class_line_ace99d3c925c8b71cb967188c029879e7}\label{class_line_ace99d3c925c8b71cb967188c029879e7}} 
+float {\bfseries get\+Angle} ()
+\item 
+\mbox{\Hypertarget{class_line_ad7e330a07e5db282314a9240b3081ba7}\label{class_line_ad7e330a07e5db282314a9240b3081ba7}} 
+float {\bfseries set\+Noise\+Threshold} (int16\+\_\+t threshold)
+\item 
+\mbox{\Hypertarget{class_line_a372f6cc5b268b6baf3629b0042fbfee7}\label{class_line_a372f6cc5b268b6baf3629b0042fbfee7}} 
+float {\bfseries set\+Color} (uint8\+\_\+t color)
+\item 
+\mbox{\Hypertarget{class_line_a972acaef656a4ddfe3bf3e82a2a0f493}\label{class_line_a972acaef656a4ddfe3bf3e82a2a0f493}} 
+uint16\+\_\+t {\bfseries get\+Sensor} (uint8\+\_\+t sensor)
+\item 
+\mbox{\Hypertarget{class_line_a72563901f4a04dc87ceacc7913655bb6}\label{class_line_a72563901f4a04dc87ceacc7913655bb6}} 
+float {\bfseries get\+Length} ()
+\item 
+\mbox{\Hypertarget{class_line_aba3cf991fad6400a3d8735336c509344}\label{class_line_aba3cf991fad6400a3d8735336c509344}} 
+void {\bfseries set\+Length} (float length)
+\item 
+\mbox{\Hypertarget{class_line_a1f1166d184eab9bc6a8445f20d1f26e3}\label{class_line_a1f1166d184eab9bc6a8445f20d1f26e3}} 
+void {\bfseries read\+Calibrated} ()
+\item 
+\mbox{\Hypertarget{class_line_aef792239bcba2dd7db1f71dfd608bd09}\label{class_line_aef792239bcba2dd7db1f71dfd608bd09}} 
+void {\bfseries read\+Raw} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_line_aceb7cc67fdcf4817b0e69be4e5eb7a58}\label{class_line_aceb7cc67fdcf4817b0e69be4e5eb7a58}} 
+int16\+\_\+t {\bfseries sensors\+Raw} \mbox{[}8\mbox{]} = \{0, 0, 0, 0, 0, 0, 0, 0\}
+\item 
+\mbox{\Hypertarget{class_line_a3b2d5adf497cc8f3edfd7e9f1a87ca7b}\label{class_line_a3b2d5adf497cc8f3edfd7e9f1a87ca7b}} 
+int16\+\_\+t {\bfseries sensors\+Min} \mbox{[}8\mbox{]} = \{1023, 1023, 1023, 1023, 1023, 1023, 1023, 1023\}
+\item 
+\mbox{\Hypertarget{class_line_a4ca4bfe1fcd6875d958601cccc962f67}\label{class_line_a4ca4bfe1fcd6875d958601cccc962f67}} 
+int16\+\_\+t {\bfseries sensors\+Max} \mbox{[}8\mbox{]} = \{0, 0, 0, 0, 0, 0, 0, 0\}
+\item 
+\mbox{\Hypertarget{class_line_a41c4aae2e20fe0bc940e377050f9c1e4}\label{class_line_a41c4aae2e20fe0bc940e377050f9c1e4}} 
+int16\+\_\+t {\bfseries sensors\+Calibrated} \mbox{[}8\mbox{]} = \{0, 0, 0, 0, 0, 0, 0, 0\}
+\item 
+\mbox{\Hypertarget{class_line_a2423d5a551bab0e39848d29b7bb11bb8}\label{class_line_a2423d5a551bab0e39848d29b7bb11bb8}} 
+int16\+\_\+t {\bfseries line\+Previous} = 0
+\item 
+\mbox{\Hypertarget{class_line_a54341251a1179f8bc84563219ae6d990}\label{class_line_a54341251a1179f8bc84563219ae6d990}} 
+int16\+\_\+t {\bfseries noise\+Threshold} = 500
+\item 
+\mbox{\Hypertarget{class_line_a6cc4affae8257c14534495d1b2de19ec}\label{class_line_a6cc4affae8257c14534495d1b2de19ec}} 
+uint8\+\_\+t {\bfseries color} = B\+L\+A\+CK
+\item 
+\mbox{\Hypertarget{class_line_ab7e2334c25ca3ea59df0ef559bd88143}\label{class_line_ab7e2334c25ca3ea59df0ef559bd88143}} 
+float {\bfseries length} = 0.\+082
+\item 
+\mbox{\Hypertarget{class_line_a8059658253032d9bf1a9bb01a4883fc4}\label{class_line_a8059658253032d9bf1a9bb01a4883fc4}} 
+uint32\+\_\+t {\bfseries last\+Update} = 0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Line.\+h\item 
+Line.\+cpp\end{DoxyCompactItemize}

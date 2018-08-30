@@ -1,14 +1,17 @@
 #include "Button.h"
 
-/*
- * Constructor
+/**
+ * @brief Construct a new Button:: Button object
+ * 
  */
 Button::Button()
 {
 }
 
-/*
- * Returns the state of the button.
+/**
+ * @brief Checks whether the button is pressed.
+ * 
+ * @return uint8_t Button state, true if pressed.
  */
 uint8_t Button::pressed()
 {
@@ -20,8 +23,9 @@ uint8_t Button::pressed()
   return !digitalRead(BUTTON);
 }
 
-/*
- * Waits for the button to be pressed.
+/**
+ * @brief Waits for the button to be pressed.
+ * 
  */
 void Button::wait()
 {
@@ -31,8 +35,9 @@ void Button::wait()
   }
 }
 
-/*
- * Simulates a button press.
+/**
+ * @brief Simulates a button press.
+ * 
  */
 void Button::press()
 {
